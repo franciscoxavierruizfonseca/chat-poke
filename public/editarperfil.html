@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="es" ng-app="editarperfilApp" ngcloak>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" type="text/css" href="../css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/Main.css">
+    <link href="css/sweetalert.css" rel="stylesheet" />
+    <link href="css/animate.min.css" rel="stylesheet" />
+    <link href="css/time-animate.css" rel="stylesheet" />
+    <link href="css/AlertasPoke.css" rel="stylesheet" />
+    <link href="css/tema.css" rel="stylesheet" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/modulos/editarperfilApp.js"></script>
+    <script src="js/controladores/editarperfilController.js"></script>
+</head>
+<div class="navbar-fixed" id="limite">
+<nav class="nav-extended z-depth-0 navbarcolor" id="nav">
+    <div class="nav-wrapper">
+      <a href="/inicio" class="brand-logo logo-sm center"><i class="material-icons">book</i>U-Notebook</a>
+     <ul class="left">
+      <li> <a href="#" data-activates="slide-out" class="button-collapse" style="display:block;"><i class="material-icons">menu</i></a></li>
+    </ul>
+    </div>
+  </nav>
+</div>
+<body class="bodyinicio" ng-controller="editarperfilController" ng-init="cargarDatos()">
+  <div class="div-alerta" id="divAlerta"></div>
+   <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content center">
+      <h4>{{ evaluacion.evaluacion.strValor }}</h4>
+        <hr />
+        <br />
+      <div class="container">
+       <ul class="collapsible popout" data-collapsible="expandable ">
+    <li ng-repeat="pregunta in evaluacion.preguntas">
+      <div class="collapsible-header"><i class="material-icons">help_outline</i>{{pregunta.id}}° {{pregunta.strValor}}
+     </div>
+      <div class="collapsible-body">
+        <small class="right">valor: {{pregunta.ValorE}}</small>
+        <div ng-repeat="respuesta in pregunta.respuestas">
+      
+      <blockquote class="respuesta-correcta" ng-if="respuesta.BlnCorrecto && respuesta.BlnRespondido">
+      <p>{{respuesta.Index}}) {{respuesta.strValor}}</p>
+      </blockquote> 
+      <blockquote class="respuesta" ng-if="!respuesta.BlnCorrecto && respuesta.BlnRespondido">
+      <p>{{respuesta.Index}}) {{respuesta.strValor}}</p>
+      </blockquote> 
+      <blockquote class="respuesta-opcion" ng-if="!respuesta.BlnRespondido">
+      <p>{{respuesta.Index}}) {{respuesta.strValor}}</p>
+      </blockquote> 
+        </div>
+     </div>
+    </li>
+
+  </ul>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+  </div>
+<ul id="slide-out" class="side-nav">
+     <li><div class="user-view">
+      <div class="right userView" style="padding-top: 0px;width:170px;">
+                <a href="#!"><span class="user" style="color:#fff;font-size:11px;">{{tipousuario}}</span></a>
+      </div>
+      <div class="background">
+        <img class="foto-minibanner" ng-src="bdimg/{{usuario.strImgbanner}}">
+      </div>
+      <a href="#!user"><img class="circle" ng-src="bdimg/{{usuario.strImgperfil}}"></a>
+      <a href="#!name"><span class="white-text name">{{usuario.strUsuario}}</span></a>
+      <a href="#!email"><span class="white-text email">{{usuario.strNombre+" "+usuario.strApellidop+" "+usuario.strApellidom}}</span></a>
+    </div></li>
+    <li><a class="subheader">Menu</a></li>
+    <li class="no-padding">
+       <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header waves-effect" href="/inicio"><i class="material-icons">home</i> Inicio</a></li>
+            <li class="bold"><a class="collapsible-header waves-effect" href="/perfil"><i class="material-icons">person</i> Perfil</a></li>
+            <li class="bold"><a class="collapsible-header waves-effect waves-body"><i class="material-icons">check</i>Evaluaciones</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a class="a-sidenav" href="/evaluacion"><i class="material-icons">add</i> Nueva evaluacion</a></li>
+                  <li><a class="a-sidenav" href="/lista"><i class="material-icons">list</i> Mis evaluaciones</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header waves-effect" href="/resultados"><i class="material-icons">bookmark</i> Resultados</a></li>
+            
+          </ul>
+  </li>
+  <li><div class="divider"></div></li>
+  <li><a href="/logout">Cerrar sesion</a></li>
+  </ul> 
+      <div class="container" style="margin-top:60px;">
+     <div class="row">
+          <div class="col m8 s12 l8 col-contenido">
+            <div class="">
+            <h4>Edita tus datos</h4>
+<form class="col s12 m12 l12" method="POST" enctype="multipart/form-data" action="/registrar">
+      <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strNombre" name="strNombre" type="text" class="validate" value="{{editar.strNombre}}">
+          <label for="strNombre">Nombre</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strApellidop" name="strApellidop" type="text" class="validate" value="{{editar.strApellidop}}">
+          <label for="strApellidop">Apellido paterno</label>
+        </div>
+      </div>
+        <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strApellidom" name="strApellidom" type="text" class="validate" value="{{editar.strApellidom}}">
+          <label for="strApellidom">Apellido materno</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strCorreo" name="strCorreo" type="text" class="validate" value="{{editar.strCorreo}}">
+          <label for="strCorreo">Correo</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strContraseña" name="strContraseña" type="password" class="validate">
+          <label for="strContraseña">Contraseña</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strPC" name="strPC" type="password" class="validate">
+          <label for="strPC">Verificar contraseña</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strUsuario" name="strUsuario" type="text" class="validate" value="{{editar.strUsuario}}">
+          <label for="strUsuario">Usuario</label>
+        </div>
+      </div>
+      <label>Foto de perfil</label>
+<div class="file-field input-field">
+      <div class="btn">
+        <span><i class="material-icons">search</i></span>
+        <input type="file" name="imagePerfil" id="imagePerfil" >
+
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+
+      </div>
+    </div>
+      <label>Foto de banner</label>
+<div class="file-field input-field">
+      <div class="btn">
+        <span><i class="material-icons">search</i></span>
+        <input type="file" name="imageBanner" id="imageBanner" >
+
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+
+      </div>
+    </div>
+    <div class="col m12 l12 s12">
+     <input id="_id" name="_id" type="text">
+    </div>
+ <button type="submit" class="btn waves-effect waves-light right">
+         Registrar
+      </button>
+    </div>
+      </div>
+     
+    </form>
+
+          </div>
+          <div class="col m4 s12 l4">
+            
+          </div>
+        </div>
+     </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/Alertas.js"></script>
+    <script src="../js/sweetalert.min.js"></script>
+    <script>
+       $(document).ready(function () {
+         var posicion = $("#limite").offset().top;
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop()>posicion) {
+                    $('#nav').addClass("nav-color");
+                     $('#nav').removeClass("navbarcolor");
+                }else{
+                    $('#nav').removeClass("nav-color");
+                     $('#nav').addClass("navbarcolor");
+                }
+            });
+     $(".button-collapse").sideNav();
+      $('.modal').modal();
+     });
+   </script>
+</body>
+</html>

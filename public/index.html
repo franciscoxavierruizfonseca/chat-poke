@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="es" ng-app="indexApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/Main.css">
+    <link href="css/sweetalert.css" rel="stylesheet" />
+    <link href="css/animate.min.css" rel="stylesheet" />
+    <link href="css/time-animate.css" rel="stylesheet" />
+    <link href="css/AlertasPoke.css" rel="stylesheet" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/modulos/indexApp.js"></script>
+    <script src="js/controladores/indexController.js"></script>
+</head>
+<body class="body-main" ng-controller="indexController">
+ 
+       <div class="div-alerta" id="divAlerta"></div>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content center">
+      <h4>Iniciar sesion</h4>
+        <hr />
+        <br />
+      <div class="container">
+          <div class="col m12 l12 s12" style="padding-top: 8px;padding-bottom: 20px;">
+<div class="input-field">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="strCorreo" type="text" class="validate" ng-model="usuario.strCorreo">
+          <label for="strCorreo">Correo</label>
+        </div>
+                </div>
+          <div class="col m12 l12 s12" style="padding-top: 20px;padding-bottom: 20px;">
+<div class="input-field">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="strPassword" type="password" class="validate" ng-model="usuario.strPassword">
+          <label for="strPassword">Contraseña</label>
+        </div>
+                </div>
+          <a class="waves-effect waves-light btn right blue" ng-click="iniciarSesion()">Inicia sesión</a>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+  </div>  
+
+  
+
+
+<!-- Navbar -->
+    <nav class="nav-extended teal lighten-2 z-depth-0 texto-sombra">
+        <div class="menu-fixed" id="nav">
+            <div class="nav-wrapper nav-margin">
+                <a href="/" class="brand-logo logo-sm"><i class="material-icons">book</i> U-Notebook</a>
+                <a href="#!" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a class="modal-trigger" href="#modal1">Iniciar sesion</a></li>
+                    <li><a href="/registro">Registrarse</a></li>
+                  
+                </ul>
+
+                
+            </div>
+        </div>
+        <div class="nav-content">
+            <div class="parallax-container" style="z-index: 1;padding-top:350px;padding-bottom:300px;">
+                <div class="parallax">
+                    <img src="img/paralax.jpg">
+
+                    <div class="valign-wrappe banner center" style="z-index: 0;margin-top:100px;">
+                        <h5 class="center titulo-banner a-s2 fadeIn texto-sm">Cuestionarios</h5>
+                        <div class="center descripcion-banner  a-s3 fadeIn">Para mí, para él, para ella, para todos.</div>
+                         <a class="center waves-effect btn-flat white-text btnEntrar animated bounceIn modal-trigger" href="#modal1">Entrar</a>
+                    </div>
+                </div>
+            </div>
+<div id="limite"></div>
+           
+        </div>
+    </nav>
+
+
+    
+    <ul id="mobile-demo" class="side-nav">
+                    <li><a class="subheader center">Menu</a></li>
+                    <li><a class="modal-trigger" href="#modal1" ng-show="!logueado">Iniciar sesión</a></li>
+                    <li><a href="/registro" ng-show="!logueado">Registrarse</a></li>
+                    <li><div class="divider blue-text"></div></li>
+
+    </ul>
+
+
+
+<!-- Contenido-->
+<div class="container-fluid" style="padding-top:5px;">
+    <div class="row">
+       
+<div class="contenido" style="margin-top: 100px;">
+    <div class="col m12 s12 l12" style="margin-bottom:100px;">
+   <div class="col m4 s12 l4">
+    <div class="center">
+       <i class="medium material-icons teal-text" style="margin-top:20px;margin-bottom: 20px;">bookmark</i> 
+       <h5 class="center" style="color:#777;">Almacenamiento en la nube</h5>
+       <p class="">Almacena cualquier tipo de evaluación, desde cualquier dispositivo</p>
+    </div>
+   </div>
+ <div class="col m4 s12 l4">
+    <div class="center">
+     <i class="medium material-icons teal-text" style="margin-top:20px;margin-bottom: 20px;">access_time</i> 
+       <h5 class="center" style="color:#777;">Accede y comparte tus documentos fácilmente</h5>
+       <p class="">Desde cualquier dispositivo accede a ellos</p>
+    </div>
+   </div>
+   <div class="col m4 s12 l4">
+    <div class="center">
+      <i class="medium material-icons teal-text" style="margin-top:20px;margin-bottom: 20px;">verified_user</i> 
+       <h5 class="center" style="color:#777;">Respalda tus archivos de una manera fácil y segura</h5>
+       <p class="">Es seguro te lo garantizo 7u7r</p>
+    </div>
+   </div>
+</div>
+
+</div>
+
+    
+
+    </div>
+</div>
+
+
+<!-- Footer -->
+ <footer class="page-footer teal lighten-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Más información</h5>
+                <p class="grey-text text-lighten-4">Contactános desde nuestras redes para saber de nosotros</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Redes</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Fabebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Youtube</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Github</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2018 U Clouddy
+            <a class="grey-text text-lighten-4 right" href="#!">RLP Team</a>
+            </div>
+          </div>
+   </footer>
+        
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/Alertas.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script>
+       
+
+        $(document).ready(function () {
+            var posicion = $("#limite").offset().top;
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop()>posicion) {
+                    $('#nav').addClass("nav-color");
+                }else{
+                    $('#nav').removeClass("nav-color");
+                }
+            });
+
+            $('.button-collapse').sideNav();
+              $('.slider').slider();
+               $('.parallax').parallax();
+               $('.carousel').carousel();
+               $('.modal').modal();
+        });
+    </script>
+</body>
+</html>

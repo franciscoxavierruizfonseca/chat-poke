@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="es" ng-app="perfilApp" ngcloak>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/Main.css">
+    <link href="css/sweetalert.css" rel="stylesheet" />
+    <link href="css/animate.min.css" rel="stylesheet" />
+    <link href="css/time-animate.css" rel="stylesheet" />
+    <link href="css/AlertasPoke.css" rel="stylesheet" />
+    <link href="css/tema.css" rel="stylesheet" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/modulos/perfilApp.js"></script>
+    <script src="js/controladores/perfilController.js"></script>
+</head>
+<div class="navbar-fixed navbarcolor" id="limite">
+<nav class="nav-extended z-depth-0 navbarcolor" id="nav">
+    <div class="nav-wrapper">
+      <a href="/inicio" class="brand-logo logo-sm center"><i class="material-icons">book</i>U-Notebook</a>
+     <ul class="left">
+      <li> <a href="#" data-activates="slide-out" class="button-collapse" style="display:block;"><i class="material-icons">menu</i></a></li>
+    </ul>
+    </div>
+  </nav>
+</div>
+<body class="bodyinicio" ng-controller="perfilController" ng-init="cargarDatos()">
+<ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="right userView" style="padding-top: 0px;width:170px;">
+                <a href="#!"><span class="user" style="color:#fff;font-size:11px;">{{tipousuario}}</span></a>
+      </div>
+      <div class="background">
+        <img class="foto-minibanner" ng-src="bdimg/{{usuario.strImgbanner}}">
+      </div>
+      <a href="#!user"><img class="circle" ng-src="bdimg/{{usuario.strImgperfil}}"></a>
+      <a href="#!name"><span class="white-text name">{{usuario.strUsuario}}</span></a>
+      <a href="#!email"><span class="white-text email">{{usuario.strNombre+" "+usuario.strApellidop+" "+usuario.strApellidom}}</span></a>
+    </div></li>
+    <li><a class="subheader">Menu</a></li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion" ng-show="!admin">
+            <li class="bold"><a class="collapsible-header waves-effect" href="/inicio"><i class="material-icons">home</i> Inicio</a></li>
+            <li class="bold"><a class="collapsible-header waves-effect" href="/perfil"><i class="material-icons">person</i> Perfil</a></li>
+            <li class="bold"><a class="collapsible-header waves-effect waves-body"><i class="material-icons">check</i>Evaluaciones</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a class="a-sidenav" href="/evaluacion"><i class="material-icons">add</i> Nueva evaluacion</a></li>
+                  <li><a class="a-sidenav" href="/lista"><i class="material-icons">list</i> Mis evaluaciones</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header waves-effect" href="/resultados"><i class="material-icons">bookmark</i> Resultados</a></li>
+            
+          </ul>
+            <ul class="collapsible collapsible-accordion" ng-show="admin">
+            <li class="bold"><a class="collapsible-header waves-effect" href="/inicio"><i class="material-icons">home</i> Inicio</a></li>
+            <li class="bold"><a class="collapsible-header waves-effect" href="/perfil"><i class="material-icons">home</i> Perfil</a></li>
+            <li class="bold"><a class="collapsible-header waves-effect waves-body"><i class="material-icons">check</i>Evaluaciones</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a class="a-sidenav" href="/evaluacion"><i class="material-icons">add</i> Nueva evaluacion</a></li>
+                  <li><a class="a-sidenav" href="/lista"><i class="material-icons">list</i> Mis evaluaciones</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header waves-effect" href="/resultados"><i class="material-icons">bookmark</i> Resultados</a></li>
+            
+          </ul>
+  </li>
+  <li><div class="divider"></div></li>
+  <li><a href="/logout">Cerrar sesion</a></li>
+  </ul> 
+        <section class="foto-banner" style="background: url(bdimg/{{usuario.strImgbanner}}) no-repeat center center fixed;background-size: cover;">
+        <div class="container" style="padding-top: 80px;">
+            <div class="row">
+                <div class="col l5 s12 m5">
+                    <div class="card-panel">
+                        <div class="col s6 m6 l6">
+                            <img class="responsive-img thumbnail" ng-src="bdimg/{{usuario.strImgperfil}}" style="width: 100px;"></img>
+
+                        </div>
+                        <span>
+                            <h4>{{usuario.strUsuario}}</h4>
+                        </span>
+                        <p>{{usuario.strNombre + " " + usuario.strApellidop + " " + usuario.strApellidom}}</p>
+                    </div>
+                </div>
+                <div class="col l7 s12 m7">
+                    <div class="card-panel">
+                        <h5 class="center">{{tipousuario}}</h5>
+                        <div class="chip animated fadeIn"><a class="link-edit" href="/editarperfil"><i class="material-icons icon-edit">edit</i> Editar perfil</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Contenido-->
+    <div class="container" style="padding-top:70px; min-height: 600px;">
+        <div class="row">
+           <div class="col s12 m3 l3">
+                <div class="col s12 m12 l12">
+                    <div class="card-panel z-depth-2">
+                        <div class="center">
+                            <img class="responsive-img thumbnail" ng-src="img/{{tipousuario}}.png"></img>
+                        </div>
+                        <h5 class="center">{{tipousuario}}</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col s12 m9 l9">
+                <ul class="collapsible popout" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header active"><i class="material-icons texto-{{clase.nombreClase}}">person</i>Datos generales</div>
+                        <div class="collapsible-body white">
+                            <div class="row">
+                                <h5 style="margin-left: 1em">Mis datos</h5>
+                                <div class="col s6 m4 l4">
+                                    <p>
+                                        <label class="lp4">Nombre: {{usuario.strNombre}}</label>
+                                    </p>
+                                </div>
+                                <div class="col s6 m4 l4">
+                                    <p>
+                                        <label class="lp4">Apellido materno: {{usuario.strApellidop}}
+                                </div>
+                                <div class="col s6 m4 l4">
+                                    <p>
+                                        <label class="lp4">Apeliido paterno: {{usuario.strApellidom}}</label>
+                                    </p>
+                                </div>
+                                <div class="col s6 m4 l4">
+
+                                    <h2>
+                                        <label class="lp4">correo</label>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/Alertas.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script>
+       $(document).ready(function () {
+       var posicion = $("#limite").offset().top;
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop()>posicion) {
+                    $('#nav').addClass("nav-color");
+                     $('#nav').removeClass("navbarcolor");
+                }else{
+                    $('#nav').removeClass("nav-color");
+                     $('#nav').addClass("navbarcolor");
+                }
+            });
+     $(".button-collapse").sideNav();
+     });
+   </script>
+</body>
+</html>

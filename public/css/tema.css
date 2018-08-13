@@ -1,0 +1,149 @@
+.barra-rojo{
+    background-color: #ff5858;
+}
+.experiencia-rojo{
+  background-color: #b52d2d !important;
+   border: 0.08em solid #b52d2d !important;
+}
+.texto-rojo{
+    color: #f99191 !important;
+}
+.barra-verde{
+    background-color: #acece6;
+}
+.experiencia-verde{
+  background-color: #26a69a !important;
+    border: 0.08em solid #26a69a !important;
+}
+.texto-verde{
+    color: #91f9b7 !important;
+}
+.barra-aqua{
+    background-color: #ffffff;
+}
+.experiencia-aqua{
+  background-color: #b0e1f7!important;
+   border: 0.08em solid #b0e1f7 !important;
+}
+.texto-aqua{
+    color: #c0dfe2 !important;
+}
+.barra-azul{
+    background-color: #acb5ec;
+}
+.experiencia-azul{
+    background-color: #2678a6 !important;
+    border: 0.08em solid #2678a6 !important;
+}
+.texto-azul{
+    color: #91c3f9 !important;
+}
+.c100:hover > .texto-barra-azul{
+color: #91c3f9 !important;
+}
+.c100:hover > .texto-barra-rojo{
+color: #f99191 !important;
+}
+.c100:hover > .texto-barra-verde{
+color: #91f9b7 !important;
+}
+.c100:hover > .texto-barra-aqua{
+color: #c0dfe2 !important;
+}
+.menu-azul{
+    background-color: #42A5F5 !important;
+}
+.menu-rojo{
+    background-color: #ef5350 !important;
+}
+.menu-verde{
+    background-color: #26a69a !important;
+}
+.menu-aqua{
+    background-color: #80d8ff !important;
+}
+
+/* label color */
+   .input-azul label {
+     color: #777 !important;
+   }
+   /* label focus color */
+   .input-azul input:focus + label {
+     color: #42A5F5 !important;
+   }
+   /* label underline focus color */
+   .input-azul input:focus {
+     border-bottom: 1px solid #42A5F5 !important;
+     box-shadow: 0 1px 0 0 #42A5F5 !important;
+   }
+
+   /* icon prefix focus color */
+   .input-azul .prefix.active {
+     color: #42A5F5 !important;
+   }
+   /* label color */
+   .input-rojo label {
+     color: #777 !important;
+   }
+   /* label focus color */
+   .input-rojo input:focus + label {
+     color: #ef5350 !important;
+   }
+   /* label underline focus color */
+   .input-rojo input:focus {
+     border-bottom: 1px solid #ef5350 !important;
+     box-shadow: 0 1px 0 0 #ef5350 !important;
+   }
+
+   /* icon prefix focus color */
+   .input-rojo .prefix.active {
+     color: #ef5350 !important;
+   }
+      /* label color */
+   .input-verde label {
+     color: #777 !important;
+   }
+   /* label focus color */
+   .input-verde input:focus + label {
+     color: #26a69a !important;
+   }
+   /* label underline focus color */
+   .input-verde input:focus {
+     border-bottom: 1px solid #26a69a !important;
+     box-shadow: 0 1px 0 0 #26a69a !important;
+   }
+
+   /* icon prefix focus color */
+   .input-aqua .prefix.active {
+     color: #26a69a !important;
+   }
+
+         /* label color */
+   .input-aqua label {
+     color: #777 !important;
+   }
+   /* label focus color */
+   .input-aqua input:focus + label {
+     color: #80d8ff !important;
+   }
+   /* label underline focus color */
+   .input-aqua input:focus {
+     border-bottom: 1px solid #80d8ff !important;
+     box-shadow: 0 1px 0 0 #80d8ff !important;
+   }
+
+   /* icon prefix focus color */
+   .input-aqua .prefix.active {
+     color: #80d8ff !important;
+   }
+   .toast-alerta{
+    background-color: #ef5350;
+   }
+   .pick-tema{
+    height: 50px !important;
+    width: 50px !important;
+    margin-bottom: 20px;
+   }
+   .activo{
+    border: 1px solid #444;
+    }

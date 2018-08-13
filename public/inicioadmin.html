@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="es" ng-app="inicioApp" ngcloak>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/Main.css">
+    <link href="css/sweetalert.css" rel="stylesheet" />
+    <link href="css/animate.min.css" rel="stylesheet" />
+    <link href="css/time-animate.css" rel="stylesheet" />
+    <link href="css/AlertasPoke.css" rel="stylesheet" />
+    <link href="css/tema.css" rel="stylesheet" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/modulos/inicioApp.js"></script>
+    <script src="js/controladores/inicioController.js"></script>
+</head>
+<div class="navbar-fixed" id="limite">
+<nav class="nav-extended z-depth-0 navbarcolor" id="nav">
+    <div class="nav-wrapper">
+      <a href="/inicio" class="brand-logo logo-sm center"><i class="material-icons">book</i>U-Notebook</a>
+     <ul class="left">
+      <li> <a href="#" data-activates="slide-out" class="button-collapse" style="display:block;"><i class="material-icons">menu</i></a></li>
+    </ul>
+    </div>
+  </nav>
+</div>
+<body class="bodyinicio" ng-controller="inicioController" ng-init="cargarDatos()">
+<ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="right userView" style="padding-top: 0px;width:170px;">
+                <a href="#!"><span class="user" style="color:#fff;font-size:11px;">{{tipousuario}}</span></a>
+      </div>
+      <div class="background">
+        <img class="foto-minibanner" ng-src="bdimg/{{usuario.strImgbanner}}">
+      </div>
+      <a href="#!user"><img class="circle" ng-src="bdimg/{{usuario.strImgperfil}}"></a>
+      <a href="#!name"><span class="white-text name">{{usuario.strUsuario}}</span></a>
+      <a href="#!email"><span class="white-text email">{{usuario.strNombre+" "+usuario.strApellidop+" "+usuario.strApellidom}}</span></a>
+    </div></li>
+    <li><a class="subheader">Menu</a></li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header waves-effect" href="/inicio"><i class="material-icons">home</i> Inicio</a></li>
+            <li class="bold"><a class="collapsible-header waves-effect" href="/perfil"><i class="material-icons">person</i> Perfil</a></li>
+            <li class="bold"><a class="collapsible-header waves-effect waves-body"><i class="material-icons">check</i>Evaluaciones</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a class="a-sidenav" href="/evaluacion"><i class="material-icons">add</i> Nueva evaluacion</a></li>
+                  <li><a class="a-sidenav" href="/lista"><i class="material-icons">list</i> Mis evaluaciones</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header waves-effect" href="/resultados"><i class="material-icons">bookmark</i> Resultados</a></li>
+            
+          </ul>
+  </li>
+  <li><div class="divider"></div></li>
+  <li><a href="/logout">Cerrar sesion</a></li>
+  </ul> 
+      <div class="container" style="margin-top:60px;">
+        <div class="row">
+          <div class="col m9 l9 s12">
+          <div class="col-contenido">
+            <h5>{{poke.name}}</h5>
+
+            <div class="divider"></div>
+            <p>U- Notebook es la herramineta empleada y diseñada para el uso de creación, revisión, supervisión y seguimiento de evaluaciones.
+            Contando con resultados en tiempo real.</p>
+          </div>
+        </div>
+        <div class="col m3 l3 s12">
+        <div class="collection">
+        <a href="/evaluacion" class="collection-item categoria"><i class="material-icons left body-text">add</i>Nueva evaluacion</a>
+        <a href="/lista" class="collection-item categoria"><i class="material-icons left body-text">list</i>Mis evaluaciones</a>
+        <a href="/resultados" class="collection-item categoria"><i class="material-icons left body-text">bookmark</i>Resultados</a>
+      </div>
+        </div>
+        </div>
+ 
+        </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/Alertas.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script>
+       $(document).ready(function () {
+         var posicion = $("#limite").offset().top;
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop()>posicion) {
+                    $('#nav').addClass("nav-color");
+                     $('#nav').removeClass("navbarcolor");
+                }else{
+                    $('#nav').removeClass("nav-color");
+                     $('#nav').addClass("navbarcolor");
+                }
+            });
+     $(".button-collapse").sideNav();
+     });
+   </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/Main.css">
+    <link href="css/sweetalert.css" rel="stylesheet" />
+    <link href="css/animate.min.css" rel="stylesheet" />
+    <link href="css/time-animate.css" rel="stylesheet" />
+    <link href="css/AlertasPoke.css" rel="stylesheet" />
+    <link href="css/tema.css" rel="stylesheet" />
+    <script src="js/angular.min.js"></script>
+</head>
+<nav class="nav-extended navbarcolor z-depth-0">
+    <div class="nav-wrapper nav-margin">
+      <a href="/" class="brand-logo logo-sm"><i class="material-icons">book</i>U-Notebook</a>
+     
+    </div>
+  </nav>
+<body class="bodyinicio">
+
+      <div class="container" style="margin-top:60px;">
+        <div class="row">
+          <div class="col m8 s12 l8 col-contenido">
+            <div class="">
+            <h4>Registrate</h4>
+<form class="col s12 m12 l12" method="POST" enctype="multipart/form-data" action="/registrar">
+      <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strNombre" name="strNombre" type="text" class="validate">
+          <label for="strNombre">Nombre</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strApellidop" name="strApellidop" type="text" class="validate">
+          <label for="strApellidop">Apellido paterno</label>
+        </div>
+      </div>
+        <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strApellidom" name="strApellidom" type="text" class="validate">
+          <label for="strApellidom">Apellido materno</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strCorreo" name="strCorreo" type="text" class="validate">
+          <label for="strCorreo">Correo</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strContraseña" name="strContraseña" type="password" class="validate">
+          <label for="strContraseña">Contraseña</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strPC" name="strPC" type="password" class="validate">
+          <label for="strPC">Verificar contraseña</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field input-verde col s12 m12 l12">
+          <input id="strUsuario" name="strUsuario" type="text" class="validate">
+          <label for="strUsuario">Usuario</label>
+        </div>
+      </div>
+      <label>Foto de perfil</label>
+<div class="file-field input-field">
+      <div class="btn">
+        <span><i class="material-icons">search</i></span>
+        <input type="file" name="imagePerfil" id="imagePerfil" >
+
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+
+      </div>
+    </div>
+      <label>Foto de banner</label>
+<div class="file-field input-field">
+      <div class="btn">
+        <span><i class="material-icons">search</i></span>
+        <input type="file" name="imageBanner" id="imageBanner" >
+
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+
+      </div>
+    </div>
+    <div class="col m12 l12 s12">
+      <label>Tipo de usuario</label>
+      <p>
+      <input name="idUsuario" type="radio" id="user" value="2"/>
+      <label for="user">Usuario</label>
+    </p>
+    <p>
+      <input name="idUsuario" type="radio" id="admin" value="1" />
+      <label for="admin">Administrador</label>
+    </p>
+    
+    </div>
+ <button type="submit" class="btn waves-effect waves-light right">
+         Registrar
+      </button>
+    </div>
+      </div>
+     
+    </form>
+
+          </div>
+          <div class="col m4 s12 l4">
+            
+          </div>
+        </div>
+      </div>
+ 
+        
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/Alertas.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+
+</body>
+</html>
